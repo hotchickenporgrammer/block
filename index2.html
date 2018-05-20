@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta ="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            height: 300px;
+            width: 300px;
+            background: #738932;
+        }
+        #span{
+            background: #873832;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="box">box<span id="span">span</span></div>
+
+    <script>
+            ;(function () {
+                var box=document.getElementById("box");
+                var span=document.getElementById("span");
+                box.onclick=function () {
+                    alert("box");
+
+                    return false;
+                }
+                span.onclick=function (event) {
+                    event=event||window.event;
+                    alert("span");
+
+                event.cancelBubble=true;
+                }
+               document.body.onclick=function () {
+                    alert("body");
+                }
+            })();
+        </script>
+</body>
+</html>

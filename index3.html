@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #u1{
+            background: #436282;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">戳我</button>
+    <ul id="u1"> 
+        <li><a class='link' href="javascript:;">我是a</a></li>
+        <li><a class='link' href="javascript:;">我是a</a></li>
+        <li><a class='link' href="javascript:;">我是a</a></li>
+    </ul>
+    <script>
+        ;(function () {
+            var btn=document.getElementById("btn");
+            var u1=document.getElementById("u1");
+            btn.onclick=function(){
+                var li=document.createElement("li");
+                li.innerHTML="<li><a class='link' href='javascript:;'>我是a</a></li>";
+                u1.appendChild(li);
+            }
+            u1.onclick=function(event){
+                event=event||window.event;
+                if (event.target.className=='link') {
+                    alert('wsa');
+                }
+            }
+        })();
+    </script>
+</body>
+</html>

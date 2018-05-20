@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta ="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">戳我</button>
+    <script>
+        ;(function () {
+            var btn=document.getElementById("btn");
+ 
+
+            function bind( obj, evt, callback){
+
+                if (obj.addEventListener) {
+                    obj.addEventListener(evt,callback,false);
+                } else {
+                    obj.attachEvent("on"+evt,callback);
+                }
+            }
+            bind(btn,"click",function()
+                    {
+                    alert('msg');
+                    }
+                );
+        })();
+    </script>
+</body>
+</html>
